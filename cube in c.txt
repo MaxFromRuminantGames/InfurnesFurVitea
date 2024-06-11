@@ -1,0 +1,77 @@
+object testCube = {
+        .data = {
+            .faceCount = 12,
+            .uvCount = 8,
+            .vertCount = 8
+        },
+        .root = {
+            {0, 0, 0}, {0, 0, 0}
+        },
+        .mesh = {
+            .texture = SDL_CreateTextureFromSurface(renderer, SDL_LoadBMP("assets\\missing texture.bmp")),
+            .tris = (triangle3D*)calloc(12, sizeof(triangle3D)),
+        }
+    };
+
+    testCube.mesh.tris = (triangle3D[12]){
+        {//back bottom left
+            .vert1 = {.pos = {-100, -100, -100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 0, .y = 0},
+            .vert2 = {.pos = {-100,  100, -100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 1, .y = 0},
+            .vert3 = {.pos = { 100, -100, -100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 0, .y = 1}
+        },
+        {//back top right
+            .vert1 = {.pos = {-100,  100, -100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 1, .y = 0},
+            .vert2 = {.pos = { 100, -100, -100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 0, .y = 1},
+            .vert3 = {.pos = { 100,  100, -100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 1, .y = 1}
+        },
+        {//front bottom left
+            .vert1 = {.pos = {-100, -100,  100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 0, .y = 0},
+            .vert2 = {.pos = {-100,  100,  100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 1, .y = 0},
+            .vert3 = {.pos = { 100, -100,  100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 0, .y = 1}
+        },
+        {//front top right
+            .vert1 = {.pos = {-100,  100,  100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 1, .y = 0},
+            .vert2 = {.pos = { 100, -100,  100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 0, .y = 1},
+            .vert3 = {.pos = { 100,  100,  100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 1, .y = 1}
+        },
+        {//sideL bottom left
+            .vert1 = {.pos = {-100, -100, -100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 0, .y = 0},
+            .vert2 = {.pos = {-100, -100,  100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 1, .y = 0},
+            .vert3 = {.pos = {-100,  100, -100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 0, .y = 1}
+        },
+        {//sideL top right
+            .vert1 = {.pos = {-100, -100,  100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 1, .y = 0},
+            .vert2 = {.pos = {-100,  100, -100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 0, .y = 1},
+            .vert3 = {.pos = {-100,  100,  100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 1, .y = 1}
+        },
+        {//sideR bottom left
+            .vert1 = {.pos = { 100, -100, -100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 0, .y = 0},
+            .vert2 = {.pos = { 100, -100,  100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 1, .y = 0},
+            .vert3 = {.pos = { 100,  100, -100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 0, .y = 1}
+        },
+        {//sideR top right
+            .vert1 = {.pos = { 100, -100,  100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 1, .y = 0},
+            .vert2 = {.pos = { 100,  100, -100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 0, .y = 1},
+            .vert3 = {.pos = { 100,  100,  100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 1, .y = 1}
+        },
+        {//bottom back left
+            .vert1 = {.pos = {-100, -100, -100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 0, .y = 0},
+            .vert2 = {.pos = { 100, -100, -100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 1, .y = 0},
+            .vert3 = {.pos = {-100, -100,  100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 0, .y = 1}
+        },
+        {//bottom front right
+            .vert1 = {.pos = { 100, -100, -100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 1, .y = 0},
+            .vert2 = {.pos = {-100, -100,  100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 0, .y = 1},
+            .vert3 = {.pos = { 100, -100,  100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 1, .y = 1}
+        },
+        {//top back left
+            .vert1 = {.pos = {-100,  100, -100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 0, .y = 0},
+            .vert2 = {.pos = { 100,  100, -100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 1, .y = 0},
+            .vert3 = {.pos = {-100,  100,  100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 0, .y = 1}
+        },
+        {//top front right
+            .vert1 = {.pos = { 100,  100, -100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 1, .y = 0},
+            .vert2 = {.pos = {-100,  100,  100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 0, .y = 1},
+            .vert3 = {.pos = { 100,  100,  100}, .viewcolor = {255, 255, 255}}, .uv1 = {.x = 1, .y = 1}
+        },
+    };//add an obj renderer
